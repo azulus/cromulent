@@ -14,8 +14,6 @@ module.exports = {
 
 // how does restarting work?
 
-// how does middleware work?
-
 // where are the graph nodes
 
 // where are the client-side js files?
