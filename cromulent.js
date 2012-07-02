@@ -2,6 +2,10 @@ module.exports = {
 	Server: require("./lib/server")
 }
 
+// Server.router.load(require('routes'))
+// Server.templates.dirs.push(path.join(__dirname, 'templates'))
+// Server.templates.compile('name', data)
+
 // lazy loading vs startup-time initialization
 
 // how does context work?
@@ -13,10 +17,6 @@ module.exports = {
 // how does middleware work?
 
 // where are the graph nodes
-
-// where are the routes?
-
-// where are the templates?
 
 // where are the client-side js files?
 
