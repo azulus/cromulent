@@ -1,0 +1,20 @@
+{
+    "name": "cromulent"
+  , "description": "a delightfully cromulent node.js framework"
+  , "version": "0.0.1"
+  , "homepage": "https://github.com/azulus/cromulent"
+  , "authors": [
+    "Jeremy Stanley <github@azulus.com> (https://github.com/azulus)"
+  ]
+  , "contributors": [
+
+    ]
+  , "keywords": ["cromulent", "framework"]
+  , "main": "./cromulent.js"
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/azulus/cromulent.git"
+  }
+  , "dependencies": {
+  }
+}
