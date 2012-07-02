@@ -1,4 +1,4 @@
-{namespace test.simple}
+{namespace common.pages}
 
 /**
  * The home page
@@ -6,7 +6,7 @@
  */
 {template .home}
 {call .header data="all" /}
-Hello, {$name}!
+{call common.name.greeting data="all" /}
 {call .footer data="all" /}
 {/template}
 
