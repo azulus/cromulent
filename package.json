@@ -16,7 +16,7 @@
       , "url": "https://github.com/azulus/cromulent.git"
     }
   , "dependencies": {
-        "asyncBuilder": "0.1.16"
+        "composers": "*"
       , "connect": "2.3.5"
       , "dynamo": "0.2.12"
       , "plovr": "0.0.2"
