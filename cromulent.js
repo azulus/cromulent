@@ -20,14 +20,6 @@ module.exports = {
 
 // where are the static files
 
-/**
-
-1) define the modules w/ the graph nodes
-
-2) define the routes which use those graph nodes
-
-3) define the views to render something sane out from the routes
-
-4) 
-
-*/
+// graph nodes that need to be generated:
+//   variants
+//   templates
