@@ -1,0 +1,85 @@
+
+{namespace errors}
+
+
+/**
+ * Renders an error page.
+ * @param status
+ * @param message
+ * @param? debugInfo
+ */
+{template .error_ autoescape="contextual"}
+  <h1>{$status}</h1>
+  <p>{$message |noAutoescape}</p>
+  {if $debugInfo}
+    <p>{$debugInfo |noAutoescape}</p>
+  {/if}
+{/template}
+
+
+/**
+ * Renders the unknown error page.
+ * @param status
+ * @param? debugInfo
+ */
+{template .unknownError autoescape="contextual"}
+  {call .error_}
+    {param status: $status /}
+    {param message}
+      Congrats. You've reached the error page for the error page.
+    {/param}
+    {param debugInfo: $debugInfo /}
+  {/call}
+{/template}
+
+
+/**
+ * Renders a 400 response error.
+ * @param? debugInfo
+ */
+{template .error400 autoescape="contextual"}
+  {call .error_}
+    {param status: 400 /}
+    {param message}What'd you do??{/param}
+    {param debugInfo: $debugInfo /}
+  {/call}
+{/template}
+
+
+/**
+ * Renders a 403 response error.
+ * @param? debugInfo
+ */
+{template .error403 autoescape="contextual"}
+  {call .error_}
+    {param status: 403 /}
+    {param message}Nothing to see here, please move along{/param}
+    {param debugInfo: $debugInfo /}
+  {/call}
+{/template}
+
+
+/**
+ * Renders a 404 response error.
+ * @param? debugInfo
+ */
+{template .error404 autoescape="contextual"}
+  {call .error_}
+    {param status: 404 /}
+    {param message}The requested URL was not found{/param}
+    {param debugInfo: $debugInfo /}
+  {/call}
+{/template}
+
+
+/**
+ * Renders a 500 response error.
+ * @param? debugInfo
+ */
+{template .error500 autoescape="contextual"}
+  {call .error_}
+    {param status: 500 /}
+    {param message}Oops! Something went wrong on our end.{/param}
+    {param debugInfo: $debugInfo /}
+  {/call}
+{/template}
