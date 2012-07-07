@@ -1,5 +1,5 @@
 var assert = require('assert')
-var Router = require('../lib/router')
+var Router = require('../lib/router').Router
 
 var router = new Router
 

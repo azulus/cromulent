@@ -1,3 +1,3 @@
-// require("./test/router")
-// require("./test/templateManager")
-require("./test/graph")
+require("./test/router")
+require("./test/templates")
+require("./test/modules")

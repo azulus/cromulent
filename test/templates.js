@@ -1,6 +1,6 @@
 var path = require('path')
 var assert = require('assert')
-var TemplateManager = require("../lib/templateManager")
+var TemplateManager = require("../lib/templates").TemplateManager
 
 var templates = new TemplateManager()
 templates.dirs.push(path.join(__dirname, 'templates/common'))
