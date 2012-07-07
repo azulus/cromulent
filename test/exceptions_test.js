@@ -1,8 +1,8 @@
+var exceptions = require('../lib/exceptions')
 var path = require('path')
-  , exceptions = require('../lib/exceptions')
-  , ErrorResponse = exceptions.ErrorResponse
-  , util = require('util')
-  , TemplateManager = require('../lib/templates').TemplateManager
+var util = require('util')
+var ErrorResponse = exceptions.ErrorResponse
+var TemplateManager = require('../lib/templates').TemplateManager
 
 
 // TODO(david): Move the generic request exceptions to a common location in the library.

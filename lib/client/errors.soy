@@ -7,8 +7,9 @@
  * @param status
  * @param message
  * @param? debugInfo
+ * @private
  */
-{template .error_ autoescape="contextual"}
+{template ._error autoescape="contextual"}
   <h1>{$status}</h1>
   <p>{$message |noAutoescape}</p>
   {if $debugInfo}
@@ -23,7 +24,7 @@
  * @param? debugInfo
  */
 {template .unknownError autoescape="contextual"}
-  {call .error_}
+  {call ._error}
     {param status: $status /}
     {param message}
       Congrats. You've reached the error page for the error page.
@@ -38,7 +39,7 @@
  * @param? debugInfo
  */
 {template .error400 autoescape="contextual"}
-  {call .error_}
+  {call ._error}
     {param status: 400 /}
     {param message}What'd you do??{/param}
     {param debugInfo: $debugInfo /}
@@ -51,7 +52,7 @@
  * @param? debugInfo
  */
 {template .error403 autoescape="contextual"}
-  {call .error_}
+  {call ._error}
     {param status: 403 /}
     {param message}Nothing to see here, please move along{/param}
     {param debugInfo: $debugInfo /}
@@ -64,7 +65,7 @@
  * @param? debugInfo
  */
 {template .error404 autoescape="contextual"}
-  {call .error_}
+  {call ._error}
     {param status: 404 /}
     {param message}The requested URL was not found{/param}
     {param debugInfo: $debugInfo /}
@@ -77,7 +78,7 @@
  * @param? debugInfo
  */
 {template .error500 autoescape="contextual"}
-  {call .error_}
+  {call ._error}
     {param status: 500 /}
     {param message}Oops! Something went wrong on our end.{/param}
     {param debugInfo: $debugInfo /}
