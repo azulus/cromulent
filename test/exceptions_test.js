@@ -1,6 +1,8 @@
 var exceptions = require('../lib/exceptions')
 var path = require('path')
+var testCase = require('nodeunit').testCase
 var util = require('util')
+
 var ErrorResponse = exceptions.ErrorResponse
 var TemplateManager = require('../lib/templates').TemplateManager
 
@@ -31,17 +33,25 @@ exceptions.registerCustomHandler(NotFound, function (err) {
   return new ErrorResponse(404, err.message)
 })
 
+module.exports = testCase({
+  setUp: function (done) {
+    // Compile the error templates for testing.
+    var templates = new TemplateManager()
+    templates.dirs.push(path.join(__dirname, '../lib/client'))
+    templates.compile().then(function () {
+      done()
+    }).end()
+  },
 
-function runTests() {
-  // TODO(david): Turn these into asserts.
-  console.log(exceptions.handle(new NotFound()))
-  console.log(exceptions.handle(new BadRequest('error')))
-  console.log(exceptions.handle(new Error('random error')))
-  console.log(exceptions.handle(new NotFound2()))
-}
-
-
-// Compile the error templates for testing.
-var templates = new TemplateManager()
-templates.dirs.push(path.join(__dirname, '../lib/client'))
-templates.compile().then(runTests).end()
+  testErrors: function (test) {
+    test.equal(exceptions.handle(new NotFound()),
+        '<h1>404</h1><p>The requested URL was not found</p>')
+    test.equal(exceptions.handle(new BadRequest('error')),
+        '<h1>400</h1><p>What\'d you do??</p>')
+    test.equal(exceptions.handle(new Error('random error')),
+        '<h1>500</h1><p>Oops! Something went wrong on our end.</p><p>random error</p>')
+    test.equal(exceptions.handle(new NotFound2()),
+        '<h1>404</h1><p>The requested URL was not found</p>')
+    test.done()
+  }
+})
