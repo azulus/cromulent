@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Unit tests for variant flags in the server.
+ */
+
 var path = require('path')
 var q = require('q')
 var testCase = require('nodeunit').testCase

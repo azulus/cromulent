@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Unit tests for the exception handling system.
+ */
+
 var exceptions = require('../lib/exceptions')
 var path = require('path')
 var testCase = require('nodeunit').testCase
