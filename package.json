@@ -4,17 +4,25 @@
   , "version": "0.0.1"
   , "homepage": "https://github.com/azulus/cromulent"
   , "authors": [
-    "Jeremy Stanley <github@azulus.com> (https://github.com/azulus)"
-  ]
+      "Jeremy Stanley <github@azulus.com> (https://github.com/azulus)"
+    ]
   , "contributors": [
 
     ]
   , "keywords": ["cromulent", "framework"]
   , "main": "./cromulent.js"
   , "repository": {
-      "type": "git"
-    , "url": "https://github.com/azulus/cromulent.git"
-  }
+        "type": "git"
+      , "url": "https://github.com/azulus/cromulent.git"
+    }
   , "dependencies": {
-  }
+        "composers": "*"
+      , "connect": "2.3.5"
+      , "dynamo": "0.2.12"
+      , "plovr": "0.0.2"
+      , "q": "0.8.5"
+      , "soynode": "0.1.4"
+      , "typ": "0.6.0"
+      , "valentine": "1.5.5"
+    }
 }
