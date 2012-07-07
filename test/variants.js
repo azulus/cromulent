@@ -23,9 +23,8 @@ function testPasses() {
   var scope = new Scope(server.registry)
   scope.enter()
 
-  return scope.createGraph('variant_flag-always_passes')
-  .give('variant_flag_context-always_passes')
-  .give('variant_flag_forced-always_passes')
+  return scope.createGraph('variant.always_passes')
+  .give('variants-request-context')
   .start()
   .then(function (alwaysPasses) {
     assert.equal(alwaysPasses, true)
@@ -37,9 +36,8 @@ function testFails() {
   var scope = new Scope(server.registry)
   scope.enter()
 
-  return scope.createGraph('variant_flag-always_fails')
-  .give('variant_flag_context-always_fails')
-  .give('variant_flag_forced-always_fails')
+  return scope.createGraph('variant.always_fails')
+  .give('variants-request-context')
   .start()
   .then(function (alwaysFails) {
     assert.equal(alwaysFails, false)
