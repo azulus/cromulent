@@ -1,0 +1,25 @@
+{namespace common.pages}
+
+/**
+ * The home page
+ * @param name The name of the person
+ */
+{template .home}
+{call .header data="all" /}
+{call common.name.greeting data="all" /}
+{call .footer data="all" /}
+{/template}
+
+/**
+ * A basic header
+ */
+{template .header}
+<html><body>
+{/template}
+
+/**
+ * A basic footer
+ */
+{template .footer}
+</body></html>
+{/template}
