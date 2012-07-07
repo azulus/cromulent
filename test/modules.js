@@ -5,10 +5,7 @@ var loader = new ModuleLoader()
 loader.dirs.push(path.join(__dirname, 'modules'))
 
 loader
-.load()
-.then(function () {
+.load().then(function () {
   console.log("done", arguments)
 })
-.fail(function (e) {
-  console.error(e)
-})
+.end()
